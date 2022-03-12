@@ -11,6 +11,10 @@
         margin-bottom:30px;
         border-bottom: 2px gold solid;
       }
+      body{
+        background-color: black;
+        color:white;
+      }
       #index{
         text-align:center;
         font-size:20px;
@@ -63,10 +67,26 @@
        text-decoration: none;
        color:gray;
       }
+      #light_dark{
+        display:block;
+        margin: auto;}
     </style>
   </head>
   <body>
     <h1>JOURNEY LEE</h1>
+    <input id="light_dark" type="button" value="Light" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'Light'){
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      this.value= 'Dark';
+    } else {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      this.value= 'Light';
+    }
+    "
+    style="width:50pt; height: 20pt; background-Color: gold; ">
     <div id='index'>
       <h2>
         <a href="index.html">Profile</a>&emsp;&emsp;&emsp;&emsp;
