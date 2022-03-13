@@ -64,7 +64,7 @@
       }
       a{
        text-decoration: none;
-       color:gray;
+       color:silver;
       }
     </style>
   </head>
@@ -76,14 +76,27 @@
       target.style.backgroundColor = 'white';
       target.style.color = 'black';
       this.value= 'Dark';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+       alist[i].style.color = 'gray';
+       i = i+1;
+      }
     } else {
       target.style.backgroundColor = 'black';
       target.style.color = 'white';
       this.value= 'Light';
-    }
-    "
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+       alist[i].style.color = 'silver';
+       i = i+1;
+     }
+    }"
     style="width:50pt; height: 20pt; background-Color: gold; ">
-            <div id='index'>
+        <div id='index'>
           <h2>
             <a href="index.html">Profile</a>&emsp;&emsp;&emsp;&emsp;
             <a href="portfolio.html">Portfolio</a>&emsp;&emsp;&emsp;&emsp;
@@ -95,6 +108,7 @@
         <img src="./img/PROFILE.JPG" alt="" id=image>
       </div>
       <div id='profile'>
+        <ul>
            <li>부산 예술 대학교 졸업</li><br>
            <li>서울 디지털 대학교 졸업</li><br>
            <li>코마 실용음악학원 출강</li><br>
@@ -103,6 +117,7 @@
            <li>울산 울주군 진로멘토링 강사 활동</li><br>
            <li>부산 신라중학교 밴드부 Sody 지도</li><br>
            <li>울산과학대학 창의인성프로그램 유레카 출강</li>
+         </ul>
       </div>
   </div>
 
