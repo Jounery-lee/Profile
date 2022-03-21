@@ -30,6 +30,13 @@
      }
     }
    }
+   function bodyajax(name){
+     fetch(name).then(function(response){
+       response.text().then(function(text){
+     document.querySelector('#grid').innerHTML = text;
+       })
+     })
+   }
     </script>
     <style>
       h1{
@@ -103,27 +110,12 @@
     style="width:50pt; height: 20pt; background-Color: gold; ">
         <div id='index'>
           <h2>
-            <a onclick="
-            fetch('profile').then(function(response){
-              response.text().then(function(text){
-            document.querySelector('#grid').innerHTML = text;
-              })
-            })
-            ">Profile</a>&emsp;&emsp;&emsp;&emsp;
-            <a onclick="
-            fetch('portfolio').then(function(response){
-              response.text().then(function(text){
-            document.querySelector('#grid').innerHTML = text;
-              })
-            })
-            ">Portfolio</a>&emsp;&emsp;&emsp;&emsp;
-            <a onclick="
-            fetch('contact').then(function(response){
-              response.text().then(function(text){
-            document.querySelector('#grid').innerHTML = text;
-              })
-            })
-            ">Contact</a>
+            <a onclick="bodyajax('profile')">
+              Profile</a>&emsp;&emsp;&emsp;&emsp;
+            <a onclick="bodyajax('portfolio')">
+              Portfolio</a>&emsp;&emsp;&emsp;&emsp;
+            <a onclick="bodyajax('contact')">
+              Contact</a>
           </h2>
         </div>
   <div id='grid'>
