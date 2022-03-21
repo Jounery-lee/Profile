@@ -3,6 +3,34 @@
   <head>
     <meta charset="utf-8">
     <title>Journey's page</title>
+    <script>
+    function lightdarkhandler(self){
+    var target = document.querySelector('body');
+    if(self.value === 'Light'){
+      target.style.backgroundColor = 'white';
+      target.style.color = 'black';
+      self.value= 'Dark';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+       alist[i].style.color = 'gray';
+       i = i+1;
+      }
+    } else {
+      target.style.backgroundColor = 'black';
+      target.style.color = 'white';
+      self.value= 'Light';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+       alist[i].style.color = 'silver';
+       i = i+1;
+     }
+    }
+   }
+    </script>
     <style>
       h1{
         text-align:center;
@@ -71,43 +99,38 @@
   <body>
     <h1>JOURNEY LEE</h1>
     <input id="light_dark" type="button" value="Light" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'Light'){
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value= 'Dark';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-       alist[i].style.color = 'gray';
-       i = i+1;
-      }
-    } else {
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value= 'Light';
-
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-       alist[i].style.color = 'silver';
-       i = i+1;
-     }
-    }"
+             lightdarkhandler(this)"
     style="width:50pt; height: 20pt; background-Color: gold; ">
         <div id='index'>
           <h2>
-            <a href="index.html">Profile</a>&emsp;&emsp;&emsp;&emsp;
-            <a href="portfolio.html">Portfolio</a>&emsp;&emsp;&emsp;&emsp;
-            <a href="contact.html">Contact</a>
+            <a onclick="
+            fetch('profile').then(function(response){
+              response.text().then(function(text){
+            document.querySelector('#grid').innerHTML = text;
+              })
+            })
+            ">Profile</a>&emsp;&emsp;&emsp;&emsp;
+            <a onclick="
+            fetch('portfolio').then(function(response){
+              response.text().then(function(text){
+            document.querySelector('#grid').innerHTML = text;
+              })
+            })
+            ">Portfolio</a>&emsp;&emsp;&emsp;&emsp;
+            <a onclick="
+            fetch('contact').then(function(response){
+              response.text().then(function(text){
+            document.querySelector('#grid').innerHTML = text;
+              })
+            })
+            ">Contact</a>
           </h2>
         </div>
   <div id='grid'>
       <div>
         <img src="./img/PROFILE.JPG" alt="" id=image>
       </div>
-      <div id='profile'>
+      <div id='profile' class='mainitem'>
         <ul>
            <li>부산 예술 대학교 졸업</li><br>
            <li>서울 디지털 대학교 졸업</li><br>

@@ -1,0 +1,9 @@
+<div>
+  <img src="./img/contact.JPG" alt="" id=image>
+</div>
+
+<div id='profile'>
+     <li>Phone 01033100421</li><br><br><br>
+     <li>E-mail rmfo2@naver.com</li><br><br><br>
+     <li>부산광역시 수영구 거주</li><br><br><br>
+</div>
